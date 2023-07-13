@@ -34,7 +34,7 @@ function AuthPage() {
     if (pageType === 'login') {
         return <div style={{margin: 50}}>
             <div>Login</div>
-            <input ref={loginEmailRef} type="email" placeholder="Enter your email" /> <br/>
+            <input ref={loginEmailRef} type="email" placeholder="Enter your email" />
             <input 
                 ref={loginPasswordRef} 
                 type="password" 
@@ -43,7 +43,7 @@ function AuthPage() {
                 value={password}
             /> <br/>
             <PasswordStrengthBar password={password} />
-            <button onClick={handleLogin}>Login</button> <br/> <br/>
+            <button onClick={handleLogin}>Login</button>
             <button onClick={() => setPageType('register')}>Go to register!</button>
         </div>
     }
@@ -51,10 +51,10 @@ function AuthPage() {
     if (pageType === 'register') {
         return <div style={{margin: 50}}>
             <div>Register</div>
-            <input ref={registerNameRef} type="text" placeholder="Enter your name" /> <br/>
-            <input ref={registerEmailRef} type="email" placeholder="Enter your email" /> <br/>
+            <input ref={registerNameRef} type="text" placeholder="Enter your name" /> 
+            <input ref={registerEmailRef} type="email" placeholder="Enter your email" /> 
             <input ref={registerPasswordRef} type="password" placeholder="Enter your password" /> <br/>
-            <button onClick={handleSignup}>Sign up</button> <br/> <br/>
+            <button onClick={handleSignup}>Sign up</button>
             <button onClick={() => setPageType('login')}>Go to login!</button>
         </div>
     }
