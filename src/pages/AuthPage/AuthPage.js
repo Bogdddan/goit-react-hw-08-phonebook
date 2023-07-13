@@ -74,14 +74,33 @@ function AuthPage() {
     }
 
     if (pageType === 'register') {
-        return <div style={{margin: 50}}>
-            <div>Register</div>
-            <input ref={registerNameRef} type="text" placeholder="Enter your name" /> <br/>
-            <input ref={registerEmailRef} type="email" placeholder="Enter your email" /> <br/>
-            <input ref={registerPasswordRef} type="password" placeholder="Enter your password" /> <br/>
-            <button onClick={handleSignup}>Sign up</button> <br/> <br/>
-            <button onClick={() => setPageType('login')}>Go to login!</button>
-        </div>
+        return <section>
+            <div className={css.formBox}>
+              <div className={css.formValue}>
+                  <form>
+                      <h2>Register</h2>
+                      <div className={css.inputBox}>
+                        <input
+                         ref={registerNameRef} 
+                         type="text"
+                         autoComplete='off'
+                         />
+                        <label fro="">Name</label>
+                      </div>
+                      <div className={css.inputBox}>
+                        <input ref={registerEmailRef} type="email"  autoComplete='off'/>
+                        <label fro="">Email</label>
+                      </div>
+                      <div className={css.inputBox}>
+                        <input ref={registerPasswordRef} type="password"  autoComplete='off'/>
+                        <label fro="">Name</label>
+                      </div>
+                      <button className={css.loginButton} onClick={handleSignup}>Sign up</button>
+                  </form>
+                   <div>Alredy have account <button className={css.registerButton} onClick={() => setPageType('login')}>Go to login!</button></div>
+                </div>
+          </div>
+        </section>
     }
 }
 
