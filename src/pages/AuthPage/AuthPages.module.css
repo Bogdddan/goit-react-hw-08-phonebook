@@ -126,6 +126,7 @@ input:invalid ~ label{
     background-color: transparent;
     border: none;
     cursor: pointer;
+    margin-left: 5px;
 }
 
 .registerButton p{

@@ -97,7 +97,7 @@ function AuthPage() {
                       </div>
                       <button className={css.loginButton} onClick={handleSignup}>Sign up</button>
                   </form>
-                   <div>Alredy have account <button className={css.registerButton} onClick={() => setPageType('login')}>Go to login!</button></div>
+                   <div>Alredy have account <button className={css.registerButton} onClick={() => setPageType('login')}><p>Go to login!</p></button></div>
                 </div>
           </div>
         </section>
@@ -105,37 +105,3 @@ function AuthPage() {
 }
 
 export default AuthPage;
-
-
-{/* <div>Login</div>
-                <div>
-  
-                    <input 
-                        ref={loginEmailRef} 
-                        type="email" 
-                        placeholder="Enter your email" 
-                    />
-                    <label for="">Email</label>
-  
-                </div>
-
-
-                <div>
-                  <input 
-                      ref={loginPasswordRef} 
-                      type="password" 
-                      placeholder="Enter your password" 
-                      onChange={(event) => {setPassword(event.target.value)}}
-                      value={password}
-                  />
-                  {/* <PasswordStrengthBar password={password} /> */}
-              //     <label for="">Password</label>
-              //   </div>
-
-              
-                // <div>
-                //   <label for=''><input type="checkbox" />Remember Me</label>
-                //   <a href='#'>Forget Password</a>
-                // </div>
-              // <button onClick={handleLogin}>Login</button><br/>
-              // I dont have account<button onClick={() => setPageType('register')}>register!</button> */}
