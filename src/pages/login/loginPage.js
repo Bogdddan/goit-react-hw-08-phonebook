@@ -2,11 +2,13 @@ import { useState } from "react";
 import { useAuth } from "hooks/index";
 import { useDispatch } from "react-redux";
 import { logIn } from "redux/auth/operations";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
+  const navigate = useNavigate();
     const dispatch = useDispatch();
     const [password, setPassword] = useState('');
-    comst [email, setEmail] = useState('');
+    const [email, setEmail] = useState('');
 
     const { isAuthError } = useAuth();
 
@@ -14,6 +16,9 @@ function LoginPage() {
       dispatch(logIn({email, password}))
     }
     
+    const handleLoginNav = () => {
+      navigate('/signup')
+    }
 
   return(
     <>
@@ -34,7 +39,7 @@ function LoginPage() {
         {/* <PasswordStrengthBar password={password} /> */}
         {isAuthError && <h2>Error while loggin in</h2>}
         <button onClick={handleLogin}>Login</button> <br/> <br/>
-        <button>Go to register!</button>
+        <button onClick={handleLoginNav}>Go to register!</button>
       </div>
     </>
   )
