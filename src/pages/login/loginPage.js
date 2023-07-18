@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useAuth } from "../../hooks/index";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { logIn } from "../../redux/auth/operations";
+import { logIn, register } from "../../redux/auth/operations";
+import css from './loginPage.module.css';
 
 function LoginPage() {
     const navigate = useNavigate();
@@ -21,7 +22,46 @@ function LoginPage() {
     };
 
     return (
-        <div style={{margin: 50}}>
+        <section>
+            <div className={css.formBox}>
+                <div className={css.formValue}>
+                  <form>
+                    <h2>Login</h2>
+                    <div className={css.inputBox}>
+
+                        <input type="email"
+                          value={email}
+                          onChange={(event) => setEmail(event.target.value)}
+                          required/>
+                        <label for="">email</label>
+                    </div>
+                    <div className={css.inputBox}>
+                          <input type="password" 
+                            value={password}
+                            onChange={(event) => setPassword(event.target.value)}
+                            required/>
+                          <label for="">password</label>
+                      </div>
+                    <div className={css.forget}>
+                        <input type="checkbox" />Remember Me
+                      <a href="https://www.google.com/"></a>
+                    </div>
+                    {isAuthError && <div>Error occurred while logging in</div>}
+                    <button onClick={handleLogin} className={css.loginBtn}>Log in</button>
+                    <div className={css.register}>
+                      <p>Don't have a account <button onClick={handleSignupNavigate}>Register</button></p>
+                    </div>
+                  </form>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default LoginPage;
+
+
+{/* <div style={{margin: 50}}>
             <div>Login</div>
             <input 
                 type="email" 
@@ -38,8 +78,4 @@ function LoginPage() {
             {isAuthError && <div>Error occurred while logging in</div>} <br />
             <button onClick={handleLogin}>Login</button> <br />
             <button onClick={handleSignupNavigate}>Go to register page</button>
-        </div>
-    )
-}
-
-export default LoginPage;
+        </div> */}
