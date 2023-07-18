@@ -3,3 +3,5 @@ export const selectUser = state => state.auth.user;
 export const selectIsAuthError = state => state.auth.isAuthError;
 export const selectIsRefreshing = state => state.auth.isRefreshing;
 export const selectIsLoading = state => state.auth.isLoading;
+export const getСontacts = state => state.contacts;
+export const getFilter = state => state.filter;
