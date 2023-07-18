@@ -33,14 +33,14 @@ function LoginPage() {
                           value={email}
                           onChange={(event) => setEmail(event.target.value)}
                           required/>
-                        <label for="">email</label>
+                        <label for="">Email</label>
                     </div>
                     <div className={css.inputBox}>
                           <input type="password" 
                             value={password}
                             onChange={(event) => setPassword(event.target.value)}
                             required/>
-                          <label for="">password</label>
+                          <label for="">Password</label>
                       </div>
                     <div className={css.forget}>
                         <input type="checkbox" />Remember Me

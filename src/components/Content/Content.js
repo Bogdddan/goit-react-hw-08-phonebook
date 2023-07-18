@@ -63,9 +63,9 @@ function Content() {
             filtredContacts={filtredContacts}
             onDeleteContact={deleteContact}
           />
-					         <div>
+		    <div>
             <button onClick={handleLogout}>Log out</button>
-        </div>
+            </div>
         </div>
       );
 }

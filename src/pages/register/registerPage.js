@@ -3,7 +3,8 @@ import { useAuth } from "../../hooks/index";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
-import PasswordStrengthBar from 'react-password-strength-bar';
+// import PasswordStrengthBar from 'react-password-strength-bar';
+import css from '../login/loginPage.module.css';
 
 function RegisterPage() {
     const dispatch = useDispatch();
@@ -23,31 +24,44 @@ function RegisterPage() {
     };
 
     return (
-        <div style={{margin: 50}}>
-            <div>Register</div>
-            <input 
-                type="text" 
-                placeholder="Please enter your name"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-            /> <br/>
-            <input 
-                type="email" 
-                placeholder="Please enter your email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-            /> <br/>
-            <input 
-                type="password" 
-                placeholder="Please enter your password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-            /> <br/>
-            <div style={{width: 150}}><PasswordStrengthBar password={password} /></div>
-            {isAuthError && <div>Error occurred while register</div>} <br />
-            <button onClick={handleRegister}>Register</button> <br />
-            <button onClick={handleLoginNavigate}>Go to login page</button>
+      <section>
+        <div className={css.formBox}>
+            <div className={css.formValue}>
+              <form>
+                <h2>Register</h2>
+                <div className={css.inputBox}>
+                    <input type="name"
+                      value={name}
+                      onChange={(event) => setName(event.target.value)}
+                      required/>
+                    <label for="">Name</label>
+                </div>
+                <div className={css.inputBox}>
+                    <input type="email"
+                      value={email}
+                      onChange={(event) => setEmail(event.target.value)}
+                      required/>
+                    <label for="">Email</label>
+                </div>
+                <div className={css.inputBox}>
+                      <input type="password" 
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                        required/>
+                      <label for="">Password</label>
+                  </div>
+                <div className={css.forget}>
+                    <input type="checkbox" />Remember Me
+                </div>
+                {isAuthError && <div>Error occurred while log in</div>}
+                <button onClick={handleRegister} className={css.loginBtn}>Log in</button>
+                <div className={css.register}>
+                  <p>Allredy have account<button onClick={handleLoginNavigate}>Log in</button></p>
+                </div>
+              </form>
+            </div>
         </div>
+    </section>
     )
 }
 
