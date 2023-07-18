@@ -8,7 +8,7 @@ function NotFound() {
         setTimeout(() => {
             navigate('/', { replace: true });
         }, 3000);
-    }, []);
+    }, [navigate]);
 
     return <>
         <div style={{marginTop: 10}}>Page not found</div>

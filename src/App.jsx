@@ -28,7 +28,7 @@ function App() {
     if (isLoggedIn) {
       navigate('/');
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, navigate]);
 
   if (isRefreshing || isLoading) {
     return <LoadingBar />
@@ -47,12 +47,6 @@ function App() {
 
 export default App;
 
-// name jhkhruid
-// email jshuifhi@gmail.com
-// pass uehueijksbidh56
-
-
-
-// jkskhueriut
-// kjfgjuhi@gmail.com
-// 653476td6fuihsdugyerur
+// bkubjbjbj
+// hvjhvyvtv@gmail.com
+// jkbjbkbbvrxt5r6r6

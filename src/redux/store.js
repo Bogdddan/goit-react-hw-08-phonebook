@@ -12,6 +12,8 @@ storage,
 whitelist: ['auth', CONTACTS],
 };
 
+console.log(persistConfig);
+
 const rootReducer = {
 contacts: contactsReducer,
 filter: filterReducer,
