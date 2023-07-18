@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../../hooks/index";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { logIn, register } from "../../redux/auth/operations";
+import { logIn } from "../../redux/auth/operations";
 import css from './loginPage.module.css';
 
 function LoginPage() {
@@ -44,7 +44,6 @@ function LoginPage() {
                       </div>
                     <div className={css.forget}>
                         <input type="checkbox" />Remember Me
-                      <a href="https://www.google.com/"></a>
                     </div>
                     {isAuthError && <div>Error occurred while logging in</div>}
                     <button onClick={handleLogin} className={css.loginBtn}>Log in</button>
