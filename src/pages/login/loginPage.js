@@ -59,23 +59,3 @@ function LoginPage() {
 }
 
 export default LoginPage;
-
-
-{/* <div style={{margin: 50}}>
-            <div>Login</div>
-            <input 
-                type="email" 
-                placeholder="Please enter your email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-            /> <br/>
-            <input 
-                type="password" 
-                placeholder="Please enter your password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-            /> <br/>
-            {isAuthError && <div>Error occurred while logging in</div>} <br />
-            <button onClick={handleLogin}>Login</button> <br />
-            <button onClick={handleSignupNavigate}>Go to register page</button>
-        </div> */}
