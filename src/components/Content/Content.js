@@ -12,7 +12,7 @@ import css from './Content.module.css';
 
 function Content() {
     const {
-        user: { name, email }
+        user: { name }
     } = useAuth();
 
     const dispatch = useDispatch();
