@@ -1,0 +1,5 @@
+.list{
+    display: flex;
+    scroll-behavior: auto;
+    margin-bottom: 20px;
+}

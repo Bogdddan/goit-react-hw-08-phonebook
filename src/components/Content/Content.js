@@ -12,7 +12,7 @@ import css from './Content.module.css';
 
 function Content() {
     const {
-        user: { name }
+        user: { name, email }
     } = useAuth();
 
     const dispatch = useDispatch();
@@ -53,21 +53,38 @@ function Content() {
 
     return  (
         <div className={css.container}>
-					<div>Welcome {name}</div>
-          <h1 className={css.name}>Phonebook</h1>
-          <ContactForm onSubmit={addContact} />
-    
-          <h2 className={css.secondName}>Contacts</h2>
-          <Filter value={filter} onChange={changeFilter} />
-          <ContactList
-            filtredContacts={filtredContacts}
-            onDeleteContact={deleteContact}
-          />
-		    <div>
-            <button onClick={handleLogout}>Log out</button>
+					<div className={css.userInfo}>
+            <div className={css.wlcmTxt}>
+              <h3>Welcome</h3> 
+              <div>{name}</div>
             </div>
+            <div>{email}</div>
+					</div>
+          
+          <div className={css.contactForm}>
+            <div className={css.phoneInfo}>
+              <h1 className={css.name}>Phonebook</h1>
+                  <Filter value={filter} onChange={changeFilter} />
+                <ContactList
+                  filtredContacts={filtredContacts}
+                  onDeleteContact={deleteContact}
+                />
+            </div>      
+          </div>
+          <div className={css.addContactForm}>
+            <ContactForm onSubmit={addContact} />
+            <button className={css.logOutBtn} onClick={handleLogout}>Log out</button>
+          </div>
+		      
+      
+          
         </div>
       );
 }
 
 export default Content;
+
+
+// kjfnfnkf9893
+// bbdshweuid@gmail.com
+// fldmlkfmlkjiooj83892
